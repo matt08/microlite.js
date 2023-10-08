@@ -68,7 +68,7 @@ document.body.addEventListener('click', (e) => {
             let initialDistance = 0;
             let initialScale = 1;
 
-            // Funkcja do obliczania odległości między dwoma punktami dotknięcia
+            // Function to calculate the distance between two touch points
             function getDistance(touches) {
                 const [touch1, touch2] = touches;
                 const dx = touch1.clientX - touch2.clientX;
@@ -76,7 +76,7 @@ document.body.addEventListener('click', (e) => {
                 return Math.sqrt(dx * dx + dy * dy);
             }
 
-            // Obsługa zdarzenia rozpoczęcia dotknięcia
+            // Handling the start of touch event
             document.body.addEventListener('touchstart', (e) => {
                 const img = e.target.closest('.mli img');
                 if (img && e.touches.length === 2) {
@@ -86,7 +86,7 @@ document.body.addEventListener('click', (e) => {
                 }
             }, { passive: true });
 
-            // Obsługa zdarzenia przesunięcia dotknięcia
+            // Handling of touch shift event
             document.body.addEventListener('touchmove', (e) => {
                 if (isZooming && e.touches.length === 2) {
                     const currentDistance = getDistance(e.touches);
@@ -96,7 +96,7 @@ document.body.addEventListener('click', (e) => {
                 }
             }, { passive: false });
 
-            // Obsługa zdarzenia zakończenia dotknięcia
+            // Handling the touch end event
             document.body.addEventListener('touchend', (e) => {
                 if (isZooming) {
                     isZooming = false;
