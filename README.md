@@ -17,6 +17,8 @@ Just **include the Script**: Add the `microlite.min.js` script at the end of you
 <script src="path_to_your_folder/microlite.min.js" type="module" defer></script>
 ```
 
+Works great with [instant.page](https://github.com/instantpage/instant.page).
+
 ## Demo
 A live demonstration of microlite.js in action can be found in the repository. Check out the demo.html file to see how it works.
 
