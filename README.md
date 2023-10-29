@@ -14,7 +14,7 @@
 ## How to Use:
 Just **include the Script**: Add the `microlite.min.js` script at the end of your HTML file before `</body>`:
 ```html
-<script src="path_to_your_folder/microlite.min.js"></script>
+<script src="path_to_your_folder/microlite.min.js" type="module" defer></script>
 ```
 
 ## Demo
