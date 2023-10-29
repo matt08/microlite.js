@@ -1,6 +1,6 @@
 # microlite.js
 
-**microlite.js** is an ultra-lightweight, minimalistic, simple lightbox script written in pure JavaScript. It's only 1.5KB when gzipped, providing a seamless experience for your web projects. No jQuery. No dependencies. Just one small file.
+**microlite.js** is an ultra-lightweight, minimalistic, simple lightbox script written in pure JavaScript. It's only 1.1KB when gzipped, providing a seamless experience for your web projects. No jQuery. No dependencies. Just one small file.
 
 **What is lightbox?** *A lightbox is a graphical user interface (GUI) element that displays images, videos, or other content using an overlay on the current page. It is often used on websites to showcase media content without navigating away from the current page. When a user clicks on a media item, the lightbox enlarges the item and dims the background, creating a focus on the displayed content. The user can then close the lightbox to return to the original page content. Lightboxes are commonly used in photo galleries, product images, and video displays on websites.*
 
@@ -9,7 +9,7 @@
 - **Conditional Style Loading**: Styles are loaded only when they are needed, optimizing performance.
 - **Supported Image Formats**: Supports `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.svg`, `.webp`, and `.avif` formats.
 - **Built-in Preloader**: Provides a smooth user experience while waiting for images to load.
-- **Keyboard and Touch Support**: Closes the lightbox using the 'Esc' key and handles zoom on touch devices.
+- **Keyboard and Touch Support**: Closes the lightbox using the 'Esc' key, the closing 'X' button, or just by click.
 
 ## How to Use:
 Just **include the Script**: Add the `microlite.min.js` script at the end of your HTML file before `</body>`:
