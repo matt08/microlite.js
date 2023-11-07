@@ -59,14 +59,16 @@
 
             // Now load the image
             var img = new Image();
-            img.src = target.href;
-
             img.onload = function() {
                 // Set the HTML for the lightbox
-                mlite.querySelector('.mli').innerHTML = '<img src="' + img.src + '">';
+                mlite.querySelector('.mli').innerHTML = '';
+                mlite.querySelector('.mli').appendChild(img);
                 // Add an event listener to close the lightbox with the 'Esc' key
                 window.addEventListener('keydown', mliteEventHandler);
             };
+            img.fetchPriority = "high";
+            img.src = target.href; 
+
         }
     });
 })();
