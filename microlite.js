@@ -1,7 +1,7 @@
 (function() {
     // Constants for image extensions and their corresponding selectors
     const extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg', '.webp', '.avif'];
-    const selectors = extensions.map(ext => `a[href$="${ext}"]`).join(', ');
+    const selectors = extensions.map(ext => `a[href$="${ext}"]:not([download])`).join(', ');
 
     // Function to close the lightbox
     const closeLightbox = (mliteOpen) => {
@@ -32,7 +32,7 @@
         } else {
             // Add styles for the preloader
             var style = document.createElement('style');
-            style.innerHTML = `#ml {cursor:zoom-out;position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden;}.mlbg {position:fixed;width:100%;height:100%;background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle fill="%23000000" stroke="%23000000" stroke-width="4" r="30" cx="80" cy="200"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="%23000000" stroke="%23000000" stroke-width="4" r="30" cx="200" cy="200"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="%23000000" stroke="%23000000" stroke-width="4" r="30" cx="320" cy="200"><animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>') center / 110px no-repeat, #2c3e50;opacity:0}.s .mlbg {opacity:.8}.mli img {max-width: 100%; max-height: 100%; display: block; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0;}#ml-close {position: absolute;top: 10px;right: 10px;width: 24px;height: 24px;cursor: pointer;z-index: 10;display: flex;align-items: center;justify-content: center;}`;
+            style.innerHTML = `#ml{cursor:zoom-out;position:fixed;top:0;left:0;width:100%;height:100%;overflow:hidden}.mlbg{position:fixed;width:100%;height:100%;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="80" cy="200" r="30" fill="%23000000" stroke="%23000000" stroke-width="4"><animate attributeName="opacity" begin="-.4" calcMode="spline" dur="2" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" values="1;0;1;"/></circle><circle cx="200" cy="200" r="30" fill="%23000000" stroke="%23000000" stroke-width="4"><animate attributeName="opacity" begin="-.2" calcMode="spline" dur="2" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" values="1;0;1;"/></circle><circle cx="320" cy="200" r="30" fill="%23000000" stroke="%23000000" stroke-width="4"><animate attributeName="opacity" begin="0" calcMode="spline" dur="2" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" values="1;0;1;"/></circle></svg>') center / 110px no-repeat,#2c3e50;opacity:0}.s .mlbg{opacity:.8}.mli img{max-width:100%;max-height:100%;display:block;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0}#ml-close{position:absolute;top:10px;right:10px;width:24px;height:24px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}`;
             document.head.appendChild(style);
 
             // Create the lightbox with preloader immediately
@@ -40,7 +40,7 @@
                 mlite = document.createElement('div');
 
             mlite.id = 'ml';
-            mlite.innerHTML = `<div class="mlbg"></div> <div class="mli"></div><div id="ml-close"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>`;
+            mlite.innerHTML = `<div class="mlbg"></div> <div class="mli"></div><div id="ml-close"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6 6 18M6 6l12 12"/></svg></div>`;
             
             document.body.appendChild(mlite);
             mlite.className = 's';
